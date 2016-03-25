@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>CSI | Contact Us</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>	
+	<style>
+		#map_container{
+		  position: relative;
+		}
+		#map{
+			height: 350px;
+			
+			overflow: hidden;
+			padding-bottom: 22.25%;
+			padding-top: 30px;
+			position: relative;
+		}
+
+
+    </style>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(19.04448258, 72.8203091),
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+		
+		 var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(19.04448258, 72.8203091),
+        map: map,
+        title:"This is the place."
+    });
+			google.maps.event.addDomListener(window, "resize", function() {
+			var center = map.getCenter();
+			google.maps.event.trigger(map, "resize");
+			map.setCenter(center);
+		});
+      }
+      
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+
+<div class="navbar-fixed">
+  <nav class="indigo" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo"><b>CSI-CRCE</b></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html"><i class="material-icons left">store</i>HOME</a></li>
+		<li><a href="aboutus.html"><i class="material-icons left">supervisor_account</i>ABOUT US</a></li>
+		<li><a href="events.html"><i class="material-icons left">class</i>EVENTS</a></li>
+		<li><a href="gallery.html"><i class="material-icons left">web</i>GALLERY</a></li>
+		<li class="active"><a href="contact.html"><i class="material-icons left">settings_phone</i>CONTACT</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="index.html"><i class="material-icons left">store</i>HOME</a></li>
+		<li><a href="aboutus.html"><i class="material-icons left">supervisor_account</i>ABOUT US</a></li>
+		<li><a href="events.html"><i class="material-icons left">class</i>EVENTS</a></li>
+		<li><a href="gallery.html"><i class="material-icons left">web</i>GALLERY</a></li>
+		<li class="active"><a href="contact.html"><i class="material-icons left">settings_phone</i>CONTACT</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  </div>
+
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m6 l6">
+            <h3 class="center-align">Get in touch with us</h3>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col m6 s12">
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col m6 s12">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m6 s12">
+                            <i class="mdi-content-mail prefix"></i>
+                            <input id="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="message" class="materialize-textarea"></textarea>
+                          <label for="message">Message</label>
+                        </div>
+                    </div>
+                   
+                    <div class="row">
+                        <div class="col m12">
+                         <p class="right-align"><button class="btn btn-medium waves-effect waves-light" type="button" name="action">Send Message</button></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+		<br><br><br>
+		<div class="col s12 m6 l6">
+		  <h5 class="mdi-action-home">Postal Address</h5>
+		  <p>Fr.Agnel Ashram,Bandstand, Bandra (West),Mumbai - 400 050, India.</p>
+		  <h5 class="mdi-hardware-phone-android">Phone : </h5>
+		  <p>Brijesh: +91 8080069974</p>
+		  <p>Mansi: +91 9096968913</p>
+		  <h5 class="mdi-content-mail prefix">Email : </h5>
+		  <p>crce.csi@gmail.com</p>
+		</div>
+    </div>
+</div>
+<br>
+<div class="container">
+	<div class="row">
+	 <h3 class="center-align">We are here !</h3>
+	 <br>
+	  <div id="map_container"></div>
+	  <div id="map"></div>
+	 </div>
+
+</div>
+
+<footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l4 s12">
+          <p class="grey-text text-lighten-4"><img src="images/logo/csi_logo.png" style="width:150px;"></p>
+        </div>
+        <!--div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>-->
+        <div class="col l4 s12">
+          <h5 class="white-text">Connect</h5>
+          <!--ul>
+            <li><a class="white-text" href="index.html">Home</a></li>
+            <li><a class="white-text" href="aboutus.html">About us</a></li>
+            <li><a class="white-text" href="events.html">Events</a></li>
+            <li><a class="white-text" href="contact.html">Contact</a></li>
+          </ul-->
+		  <p>
+				<a class="white-text" href="index.html">Home</a> | <a class="white-text" href="aboutus.html">About us</a> | <a class="white-text" href="events.html">Events</a> | <a class="white-text" href="contact.html">Contact</a>
+		  </p>
+		  <p class="white-text">
+			follow us on :
+		  </p>
+		  <p>
+			<a href="https://facebook.com/csicrce"  target="_blank"><img src="images/logo/icon1.png"></a>
+			<a href="https://twitter.com/CsiCrce " target="_blank"><img src="images/logo/icon2.png"></a>
+			<iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2Fcsicrce&width=50&layout=box_count&action=like&show_faces=false&share=true&height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:65px;" allowTransparency="false"></iframe>
+			<a href="https://twitter.com/CsiCrce" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @CsiCrce</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		  </p>
+		  
+		  <p class="white-text">
+			
+		  </p>
+        </div>
+
+		<div class="col l4 s12">
+          <p class="grey-text text-lighten-4"><img src="images/logo/crce.png" style="width:180px;margin-left:30px;"></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="#">Pankaj Sankpal - CSI CRCE</a>|  Copyright © 2015-16 CSI-CRCE
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+	
+  </body>
+</html>
